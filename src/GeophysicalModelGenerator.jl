@@ -42,6 +42,8 @@ include("voxel_gravity.jl")
 include("LaMEM_io.jl")
 include("Setup_geometry.jl")
 include("stl.jl")
+include("svg_utils.jl")
+
 
 # Add optional routines (only activated when the packages are loaded)
 function __init__()
@@ -52,6 +54,10 @@ function __init__()
                 println("Loading GLMakie plotting routines within GMG")
                 @eval include("./Visualisation.jl")
         end
+        #@require EzXML = "8f5d6c58-4d21-5cfd-889c-e3ad7ee6a615" begin
+        #        println("Loading EzXML package that helps reading SVG files")
+        #        @eval include("./svg_utils.jl")
+        #end
         
 end
 
